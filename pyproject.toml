@@ -1,0 +1,14 @@
+[project]
+name = "ny-taxi"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = [
+    "dask[complete]>=2026.3.0",
+    "duckdb>=1.5.2",
+    "entangled-cli>=2.4.2",
+    "numpy>=2.4.4",
+    "pandas>=3.0.2",
+    "polars>=1.40.1",
+    "pooch>=1.9.0",
+    "zensical>=0.0.37",
+]
