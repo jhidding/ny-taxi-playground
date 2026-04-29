@@ -20,7 +20,7 @@ def make_registry(p: pooch.Pooch):
     registry_name = path.name + "-registry.txt"
     pooch.make_registry(path, path.parent / registry_name)
 
-def taxi_data(data_path: Path = Path() / "data", name: str = "taxi-data") -> pooch.Pooch:
+def taxi_data(data_path: Path = Path() / "data", name: str = "trip-data") -> pooch.Pooch:
     path = data_path / name
     registry = data_path / (name + "-registry.txt")
 
@@ -32,7 +32,7 @@ def taxi_data(data_path: Path = Path() / "data", name: str = "taxi-data") -> poo
     return p
 
 if __name__ == "__main__":
-    registry = Path() / "data" / "taxi-data-registry.txt"
+    registry = Path() / "data" / "trip-data-registry.txt"
 
     if registry.exists():
         p = taxi_data()
