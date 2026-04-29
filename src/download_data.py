@@ -16,22 +16,24 @@ def download_all(p: pooch.Pooch):
         p.fetch(filename)
 
 def make_registry(p: pooch.Pooch):
-    registry_name = p.path.name + "-registry.txt"
-    pooch.make_registry(p.path, p.path.parent / registry_name)
-    
+    path = Path(p.path)
+    registry_name = path.name + "-registry.txt"
+    pooch.make_registry(path, path.parent / registry_name)
+
 def taxi_data(data_path: Path = Path() / "data", name: str = "taxi-data") -> pooch.Pooch:
     path = data_path / name
     registry = data_path / (name + "-registry.txt")
-    
-    pooch.create(
+
+    p = pooch.create(
         path=path,
         base_url="https://d37ci6vzurychx.cloudfront.net/trip-data/",
         registry=None)
-    pooch.load_registry(registry)
- 
+    p.load_registry(registry)
+    return p
+
 if __name__ == "__main__":
     registry = Path() / "data" / "taxi-data-registry.txt"
-    
+
     if registry.exists():
         p = taxi_data()
         download_all(p)
