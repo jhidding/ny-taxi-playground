@@ -3,21 +3,39 @@ icon: lucide/rocket
 title: The NY Taxi dataset
 ---
 
-- What precise data to download?
-   - [x] PARQUET on nyc.gov: all of 2025
-   - CSV from Kaggle
-   - Create fake "bad" datasets directly from PARQUET?
+The initiative is to use the quite famous New York taxi trip data to explain several concepts on the topic of efficient data handling. The dataset is publicly accessible and has a moderate size, which should allow us to demonstrate the efficacy of several different approaches.
 
-- Interesting queries, both in execution complexity and use case relevance.
+The material developed here will replace the latter chapters in the [Parallel Python lesson](https://carpentries-incubator.github.io/lesson-parallel-python/), currently in the [Carpentries](https://carpentries.org/) Incubator.
 
 ## Objectives
 
-- Patterns like map and reduce
-- Understand delayed evaluation as a concept? (Use existing material)
-- Profiling, reading flame graphs: `py-spy` (sampling), `cprof` (instrument profiling), `speedscope`
-- Understand and identify IO bound processes
-- Have an overview of several libraries for efficient data handling: `pandas`, `polars`, `duckdb`, `dask` / `xarray` (gridded), `dask` / `dataframe`.
-- Polars and duckdb merge files transparently.
+#### Reason about promises/futures in the context of parallel programming. 
+
+- Explain the danger of shared mutable state in parallel programs.
+- Use the concept of delayed evaluation to change how a computation is scheduled.
+- Apply `dask.delayed` to visualize a problem.
+- Apply `concurrent.futures` to speed-up a computation.
+
+#### Understand the applicability of broad-stroke techniques like `map` and `reduce`.
+
+- Recognize algorithmic mapping and reduction in problems.
+- Visualize map/reduce workflows with `dask`.
+- Apply map/reduce on a large data set.
+
+#### Identify weak points in a computational process using profiling.
+
+- Explain how the efficiency of a process can be bound by IO.
+- Identify an IO bound process using a profiler.
+- Read a flame graph, using `speedscope`.
+- Explain the difference between a sampling (e.g. `py-spy`) and instrument profiler (e.g. `cProfile`).
+
+#### Apply higher order data handling frameworks to solve problems.
+
+- List several popular libraries for efficient data handling: `pandas`, `polars`, `duckdb`, `dask` / `xarray`, `dask` / `dataframe`.
+- Assess the applicability of different data formats: `csv`, `parquet`, `netcdf`, `npy`.
+- Discuss the importance of data standards with regards to FAIR principles.
+- Use `polars` or `duckdb` to handle heterogeneous and partitioned data sets transparently.
+- Evaluate the efficiency of different data handling frameworks
 
 ## Tasks
 
@@ -30,9 +48,40 @@ title: The NY Taxi dataset
 
 - Can we host the data locally?
 
-# Retrieving data
+Entangled starter
+-----------------
 
-The following script downloads the PARQUET data files for all of 2025 and generates a Pooch registry file for subsequent downloads.
+Run
+
+```bash
+uv run entangled watch
+```
+
+Create a new markdown file in the `docs` directory. You can annotate code blocks to create Python files:
+
+~~~markdown
+For example, this is "Hello, World" in Python:
+
+```python
+#| file: src/hello.py
+print("Hello, World!")
+```
+~~~
+
+You can also give snippets a name using a `#| id: name` tag at the top of a code block, and then `<<name>>` inside another code block to insert its contents there.
+
+Zensical
+--------
+
+The contents of `docs` is rendered into HTML pages using the `zensical` engine. To preview locally:
+
+```bash
+uv run zensical serve
+```
+
+## Retrieving data
+
+The following script downloads the PARQUET data files for all of 2025 and generates a Pooch registry file for subsequent downloads. Run this script using `uv run python src/download_data.py` from a command line in the project root.
 
 ```python
 #| file: src/download_data.py
@@ -89,3 +138,20 @@ from pathlib import Path
 def get_project_root() -> Path:
     return Path(__file__).parent.parent
 ```
+
+License
+-------
+
+Copyright 2026 Netherlands eScience Center
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
