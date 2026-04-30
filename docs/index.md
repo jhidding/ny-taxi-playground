@@ -39,6 +39,16 @@ The material developed here will replace the latter chapters in the [Parallel Py
 
 ## Tasks
 
+To reach the above lesson objectives we can think of several tasks.
+
+- Summary visualisations:
+    - one year histogram showing ride frequency
+    - identify traffic hot spots (do we visualize with the given shape files?)
+- Identify commute zones, i.e. is there an assymetry between traffic directions during morning and afternoon rush hours?
+- Are there significant spikes in traffic that can be attributed to a single target location?
+
+## Planning
+
 - Bouwe: generate large dataset, reduce with `xarray` example.
 - Flavio: check out duckdb
 - Leon: check out polars
