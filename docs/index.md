@@ -54,9 +54,43 @@ To reach the above lesson objectives we can think of several tasks.
 - Leon: check out polars
 - Johan: whatever, dask dataframe and coordination, download script (use pooch?), work out lesson objectives.
 
-### Question for UU
+
+## Discussion with UU
 
 - Can we host the data locally?
+    - yes, they will organize this
+
+### Lesson planning
+- Consider which part of existing material to keep or not
+    - map/reduce yes or no?
+    - the part on multithreading for python code should stay for sure, but it 
+        can stay as a simple exercise
+- schedule half a day for exercises
+    - parallel track: let people work on gridded or tabular data
+- general ideas on the exercises
+    - they should be more substantive than (at least the duckdb example) is now,
+    along the lines Johan suggested earlier; visualization would be nice
+- comments on xarray example
+    - different speedup on different laptop - why? 
+    - explain that it's important to profile/optimize on the "production" hardware
+- comments on duckdb example
+    - add data exploration in the beginning. also highlight why we need parallelization that it's big
+    - not everyone familiar with sql -- have polars alongside with ideally the same 
+      exercise content
+    - explain why speed-up of multithreading in duckdb is sub-linear
+    - consider combining the multithreading and the lazy evaluation part?
+- Code profiling
+    - I experimented with py-spy. For didactical purposes, we think it's better 
+    to profile a "pure" python script and not one where the heavy work is done in
+    an external library such as duckdb. Reason: it's easier to map between
+    components in the flamegraph and compnents in the code.
+
+
+#### Nexts steps
+- Johan will take a look, coordinate and let UU develop further
+- What is the intention with entangled for teaching?
+
+
 
 Entangled starter
 -----------------
