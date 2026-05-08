@@ -24,10 +24,10 @@ The material developed here will replace the latter chapters in the [Parallel Py
 
 #### Identify weak points in a computational process using profiling.
 
-- Explain how the efficiency of a process can be bound by IO.
-- Identify an IO bound process using a profiler.
-- Read a flame graph, using `speedscope`.
-- Explain the difference between a sampling (e.g. `py-spy`) and instrument profiler (e.g. `cProfile`).
+- [x] Explain how the efficiency of a process can be bound by IO.
+- [x] Identify an IO bound process using a profiler.
+- [x] Read a flame graph, using `speedscope`.
+- [x] Explain the difference between a sampling (e.g. `py-spy`) and instrument profiler (e.g. `cProfile`).
 
 #### Apply higher order data handling frameworks to solve problems.
 
@@ -162,9 +162,12 @@ from pathlib import Path
 
 def get_project_root() -> Path:
     return Path(__file__).parent.parent
-
-
 ```
+
+## Inspiration
+
+- [Medium post on NY Taxi dataset](https://medium.com/@muhammadaris10/nyc-taxi-trip-data-analysis-45ecfdcb6f91)
+
 
 License
 -------
