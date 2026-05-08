@@ -66,7 +66,7 @@ north_america = cartopy.crs.Orthographic(-90, 35)
 plot_map(ds.air.isel(time=0), projection=north_america)
 ```
     
-![png](notebook_files/notebook_9_0.png)
+![png](fig/notebook_9_0.png)
   
 So, this datasets is air temperature over North America from 2013 and 2014 at four time points a day.
 
@@ -95,7 +95,7 @@ Let's plot the data again to see that it is now much higher resolution:
 plot_map(ds.air.isel(time=0), projection=north_america)
 ```
     
-![png](notebook_files/notebook_14_0.png)
+![png](fig/notebook_14_0.png)
     
 Let's save the data to disk for usage in the remainder of the tutorial. We use chunks of the order of a megabyte for saving to disk.
 
@@ -424,7 +424,7 @@ plot_map(da.sel(time="2000-01-01 00:00:00"))
 
 
     
-![png](notebook_files/notebook_53_0.png)
+![png](fig/notebook_53_0.png)
     
 
 
