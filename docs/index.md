@@ -67,16 +67,21 @@ To reach the above lesson objectives we can think of several tasks.
         can stay as a simple exercise
 - schedule half a day for exercises
     - parallel track: let people work on gridded or tabular data
+    - JH: I'm having problems with the idea of parallel tracks, for logistic reasons and also coherence during teaching. 
 - general ideas on the exercises
     - they should be more substantive than (at least the duckdb example) is now,
     along the lines Johan suggested earlier; visualization would be nice
+    - JH: I agree.
 - comments on xarray example
-    - different speedup on different laptop - why? 
+    - different speedup on different laptop - why?
+      - JH: always an issue also during teaching, hardware and software versions all have an impact on performance.
     - explain that it's important to profile/optimize on the "production" hardware
+      - JH: agree
 - comments on duckdb example
     - add data exploration in the beginning. also highlight why we need parallelization that it's big
     - not everyone familiar with sql -- have polars alongside with ideally the same 
       exercise content
+      - JH: exactly my thinking
     - explain why speed-up of multithreading in duckdb is sub-linear
     - consider combining the multithreading and the lazy evaluation part?
 - Code profiling
@@ -84,16 +89,22 @@ To reach the above lesson objectives we can think of several tasks.
     to profile a "pure" python script and not one where the heavy work is done in
     an external library such as duckdb. Reason: it's easier to map between
     components in the flamegraph and compnents in the code.
+    - JH: We could insert a module on py-spy in the first day. Then repeat its use with XArray, see Bouwe's contribution.
 
 
 #### Nexts steps
 - Johan will take a look, coordinate and let UU develop further
-- What is the intention with entangled for teaching?
-
+- [x] What is the intention with entangled for teaching?
+  - JH: Entangled will not be used during teaching. It is purely for turning markdown code blocks into runnable code during lesson development.
+- Leon will contribute material on polars.
+- We find a common narrative and write material that works for both Polars and DuckDB using connected tabs. We will teach one or the other based on UU preference.
 
 
 Entangled starter
 -----------------
+
+This document uses Entangled to synchronize code in Markdown blocks with source files. We will teach the material using VS Code or Zed with Jupyter integration.
+The problem with Jupyter is that it is not so easy to use with version control. We will not use Entangled during teaching.
 
 Run
 

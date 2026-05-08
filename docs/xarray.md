@@ -1,4 +1,7 @@
-# Running computations in parallel on gridded data with Xarray and Dask
+---
+title: Gridded data with `xarray` and `dask`
+icon: lucide/grid
+---
 
 > Converted from Jupyter. This notebook gives an example of the use of XArray on large multi-dimensional data sets. This section stands out from the others, which deal with purely tabulated data. Usually there is a bit of a digotomy in data handling between the use of tables and dense datasets. We need to serve both. This episode can fill the gap of explaining how to deal with large 3 or 4 dimensional datasets, while also teaching the use of profilers.
 
